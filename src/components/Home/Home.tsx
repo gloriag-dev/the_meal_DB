@@ -16,8 +16,6 @@ let mealClient = useMealDBClient()
     }
     const handleSubmit = () => {
         fetchBySearch(meal)
-        console.log(mealsList)
-        return false;
     }
 
     
@@ -44,9 +42,6 @@ let mealClient = useMealDBClient()
             </form>
     </div>
     <div>
-      <div>
-        <h1>Meals List</h1>
-      </div>
       <ul>
         {mealsList && mealsList.map((meal, id) => {
           return <Link to={`/${meal.idMeal}`}><li key={id}> {meal.strMeal} </li></Link>

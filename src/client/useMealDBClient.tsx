@@ -73,7 +73,6 @@ export default function useMealDBClient() {
                     s: meal
                 }
             });
-            console.log(res.data)
             return res.data.meals as IMeal[]
 
         } catch (err) {
