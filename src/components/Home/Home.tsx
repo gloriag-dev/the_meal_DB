@@ -16,6 +16,7 @@ let mealClient = useMealDBClient()
     }
     const handleSubmit = () => {
         fetchBySearch(meal)
+        console.log(mealsList)
         return false;
     }
 
@@ -23,11 +24,14 @@ let mealClient = useMealDBClient()
     const fetchBySearch = async (meal: string) => {
         try {
             const data = await mealClient.getByName(meal);
+            console.log(data, 'data')
             setMealsList(data)
+           
         } catch (err) {
             console.error(err);
         }
     };
+  
     return <div className='Home'>
         <div className="searchBar">
         <h2>Hey, I'm here for a specific meal!</h2>

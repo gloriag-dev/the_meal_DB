@@ -6,11 +6,12 @@ import { useParams } from "react-router";
 
 
 
-export default function MealDetails<ReactFC>() : JSX.Element {
+export default function MealDetails() : JSX.Element {
 
-    let mealParams = useParams<{id}>()
+    let mealParams = useParams<{id : string}>()
 
     useEffect(() => {
+        if(!mealParams.id) return
         fetchById(mealParams.id);
     }, [mealParams.id]);
 
